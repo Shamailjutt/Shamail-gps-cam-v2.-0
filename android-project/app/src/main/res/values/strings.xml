@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gps cam by shamail</string>
+    <string name="gallery_title">Captured GPS Photos</string>
+    <string name="photo_viewer_title">Photo Details</string>
+    <string name="settings_title">Camera &amp; Watermark Settings</string>
+    <string name="settings_login_title">Protected Settings Sign In</string>
+    <string name="gallery_gps_camera_title">Gallery GPS Camera</string>
+    <string name="map_picker_title">Select GPS Location on Map</string>
+    <string name="org_default_name">SHAMAIL PERA</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GpsCamByShamail" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/gold_primary</item>
+        <item name="colorOnPrimary">@color/gold_on_primary</item>
+        <item name="colorSecondary">@color/gold_bright</item>
+        <item name="colorOnSecondary">@color/gold_on_primary</item>
+        <item name="colorTertiary">@color/orange_accent</item>
+        <item name="android:windowBackground">@color/navy_bg</item>
+        <item name="android:statusBarColor">@color/navy_deep</item>
+        <item name="android:navigationBarColor">@color/navy_deep</item>
+        <item name="colorSurface">@color/navy_surface</item>
+        <item name="colorSurfaceVariant">@color/navy_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOutline">@color/navy_border</item>
+    </style>
+</resources>

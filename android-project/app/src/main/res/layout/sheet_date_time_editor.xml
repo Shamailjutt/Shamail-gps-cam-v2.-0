@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/navy_surface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <View
+            android:layout_width="42dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="@color/navy_border" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date &amp; Time Stamp Editor"
+            android:textColor="@color/gold_bright"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Select automatic device clock, verified GPS satellite capture time, or a manually edited date and time before capturing."
+            android:textColor="@color/text_muted"
+            android:textSize="12sp" />
+
+        <!-- Timestamp Source Mode -->
+        <RadioGroup
+            android:id="@+id/rgTimestampMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card_navy"
+            android:padding="10dp">
+
+            <RadioButton
+                android:id="@+id/rbModeAuto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Automatic Current Device Date &amp; Time"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rbModeGps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Actual GPS Satellite Capture Time (Verified)"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rbModeManual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Custom Selected Date &amp; Time"
+                android:textColor="@color/gold_bright"
+                android:textSize="13sp" />
+        </RadioGroup>
+
+        <!-- Clean Watermark & Metadata Separation Notice -->
+        <TextView
+            android:id="@+id/tvEditedNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_card_navy"
+            android:padding="10dp"
+            android:text="Custom Date &amp; Time renders cleanly on your photo watermark with zero 'Edited' text. Original file capture time stays separate in internal metadata."
+            android:textColor="@color/gold_bright"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <!-- Manual Picker + Editable Fields Section -->
+        <LinearLayout
+            android:id="@+id/manualControlsGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card_navy"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Sequential Calendar → Clock → Confirm Picker"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSequentialPicker"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="8dp"
+                android:text="Select Calendar Date → Clock Time → Confirm"
+                android:textColor="@color/gold_on_primary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gold_primary"
+                app:cornerRadius="10dp"
+                app:icon="@drawable/ic_schedule"
+                app:iconTint="@color/gold_on_primary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickDate"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:text="Calendar Flow"
+                    android:textColor="@color/gold_bright"
+                    android:textSize="12sp"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="@color/gold_primary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickTime"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:text="Clock Only"
+                    android:textColor="@color/gold_bright"
+                    android:textSize="12sp"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="@color/gold_primary" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="2. Direct Editable Date &amp; Time Fields"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etManualDate"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@color/navy_bg"
+                    android:hint="YYYY-MM-DD"
+                    android:inputType="date"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_muted"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/etManualTime"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@color/navy_bg"
+                    android:hint="HH:MM:SS"
+                    android:inputType="time"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_muted"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnApplyTyped"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:text="Apply Typed Date &amp; Time"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                app:backgroundTint="@color/navy_surface"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <!-- 12h / 24h Format Switch -->
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch24Hour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Use 24-Hour Clock Format (off = 12-Hour AM/PM)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+
+        <!-- Live Preview Readout -->
+        <TextView
+            android:id="@+id/tvLivePreviewTimestamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_card_navy"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Preview: --"
+            android:textColor="@color/gold_bright"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Action Buttons: Reset to Current Device Time + Done -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnResetNow"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="Reset to Current"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                app:cornerRadius="12dp"
+                app:strokeColor="@color/navy_border" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveTimestamp"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="Apply Stamp"
+                android:textColor="@color/gold_on_primary"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/gold_primary"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

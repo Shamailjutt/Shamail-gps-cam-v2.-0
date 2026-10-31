@@ -1,0 +1,11 @@
+{
+  "name": "Gps cam by shamail",
+  "description": "Professional native Android GPS Map Camera application (CameraX + Kotlin APK & interactive studio) featuring SHAMAIL PERA custom watermarks, reverse geocoding, and verified/manual timestamp editing.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

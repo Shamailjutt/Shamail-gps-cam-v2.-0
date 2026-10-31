@@ -1,0 +1,16 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+android-project/.gradle/
+android-project/build/
+android-project/app/build/
+android-project/local.properties
+android-project/keystore.properties
+android-project/*.jks
+.gmp_cache/
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer gold ring -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M54,24A30,30 0,1 1,24 54A30,30 0,0 1,54 24M54,28A26,26 0,1 0,80 54A26,26 0,0 0,54 28Z" />
+    <!-- GPS Pin + Camera lens center -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M54,34C45.7,34 39,40.7 39,49C39,60.2 54,75 54,75C54,75 69,60.2 69,49C69,40.7 62.3,34 54,34ZM54,55C50.7,55 48,52.3 48,49C48,45.7 50.7,43 54,43C57.3,43 60,45.7 60,49C60,52.3 57.3,55 54,55Z" />
+</vector>
